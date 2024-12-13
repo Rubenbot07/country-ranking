@@ -1,0 +1,24 @@
+@import './responsive.scss';
+.home-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 90%;
+    .home-content {
+        background-color: $primary-color;
+        width: 100%;
+    }
+    @include tablet {
+        .home-content {
+            position: absolute;
+            top: -80px;
+            width: 90%;
+            height: 500px;
+            border-radius: 14px;
+            border: 1px solid $tertiary-color;
+        }
+    }
+}
+
