@@ -1,0 +1,27 @@
+.table-container {
+    width: 100%;
+    padding-inline: 20px;
+}
+
+.country-container {
+    width: 100%;
+    border-collapse: collapse;
+    padding-inline: 20px;
+    .country-container-header {
+        border-bottom: 1px solid $tertiary-color;
+        th {
+            text-align: left;
+            padding: 20px 5px;
+            color: $tertiary-color;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+    }
+    tbody {
+        td {
+            padding: 20px 5px;
+            color: $text-color;
+            text-align: left;
+        }
+    }
+}

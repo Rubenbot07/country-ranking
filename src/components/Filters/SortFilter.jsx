@@ -5,7 +5,7 @@ export const SortFilter = () => {
             <select>
                 <option value="Population">Population</option>
                 <option value="Alphabetical">Alphabetical</option>
-                <option value="area">Area (km²)</option>
+                <option value="area">Area (km&#178;)</option>
             </select>
         </div>
     )

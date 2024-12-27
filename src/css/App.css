@@ -33,30 +33,45 @@
   width: 100%;
   height: auto;
   min-height: 90%;
+  padding-inline: 20px;
 }
 .home-page .home-content {
   background-color: #1B1D1F;
   width: 100%;
+}
+.home-page main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-end: 20px;
 }
 @media (min-width: 768px) {
   .home-page .home-content {
     position: absolute;
     top: -80px;
     width: 90%;
-    height: 500px;
+    height: auto;
     border-radius: 14px;
     border: 1px solid #6C727F;
+  }
+}
+@media (min-width: 1024px) {
+  .home-page main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
   }
 }
 
 .header-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 20px 20px;
   color: #6C727F;
   font-size: 0.9rem;
+  gap: 20px;
 }
 .header-container .search {
   display: flex;
@@ -64,10 +79,10 @@
   background-color: #282B30;
   padding: 5px 10px;
   border-radius: 8px;
-  width: 40%;
+  width: 100%;
   height: 40px;
   min-width: 150px;
-  max-width: 1000px;
+  max-width: 350px;
 }
 .header-container .search input {
   width: 100%;
@@ -89,7 +104,8 @@
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
-  width: 30%;
+  width: 100%;
+  gap: 20px;
 }
 
 .sort-filter {
@@ -118,6 +134,79 @@
   color: #D2D5DA;
   font-size: 0.9rem;
   font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.region-filter .region-title {
+  color: #6C727F;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.region-filter .regions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.region-filter .regions-container .regions-item {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px;
+  background-color: #282B30;
+  border-radius: 8px;
+  color: #D2D5DA;
+  font-size: 0.9rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  cursor: pointer;
+}
+
+.onu-member-filter .onu-member-title {
+  color: #6C727F;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.onu-member-filter .onu-member-checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #D2D5DA;
+}
+.onu-member-filter .onu-member-checkbox-container div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.onu-member-filter .onu-member-checkbox-container div input[type=checkbox] {
+  cursor: pointer;
+}
+
+.table-container {
+  width: 100%;
+  padding-inline: 20px;
+}
+
+.country-container {
+  width: 100%;
+  border-collapse: collapse;
+  padding-inline: 20px;
+}
+.country-container .country-container-header {
+  border-bottom: 1px solid #6C727F;
+}
+.country-container .country-container-header th {
+  text-align: left;
+  padding: 20px 5px;
+  color: #6C727F;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.country-container tbody td {
+  padding: 20px 5px;
+  color: #D2D5DA;
+  text-align: left;
 }
 
 body {
