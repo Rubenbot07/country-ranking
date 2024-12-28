@@ -6,10 +6,10 @@
 .country-container {
     width: 100%;
     border-collapse: collapse;
-    padding-inline: 20px;
     .country-container-header {
         border-bottom: 1px solid $tertiary-color;
         th {
+            width: 100px;
             text-align: left;
             padding: 20px 5px;
             color: $tertiary-color;
@@ -22,6 +22,7 @@
             padding: 20px 5px;
             color: $text-color;
             text-align: left;
+            margin-right: 10px;
         }
         .country-flag {
             width: 100px;
@@ -30,8 +31,9 @@
         }
         .country-flag img {
             border-radius: 14px;
-            width: 100%;
+            width: 80%;
             height: 100%;
+            max-width: 100px;
             object-fit: cover;
         }
     }

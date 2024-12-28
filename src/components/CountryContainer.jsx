@@ -1,5 +1,6 @@
 import  CountryContext  from "../context/CountryContext"
 import { useContext } from "react"
+import { LoadingSkeleton } from "./LoadingSkeleton"
 
 export const CountryContainer = ( ) => {
     const { countries, loading } = useContext(CountryContext)
@@ -13,18 +14,20 @@ export const CountryContainer = ( ) => {
                         <th>Name</th>
                         <th>Population</th>
                         <th>Area (km&#178;)</th>
+                        <th>Region</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         loading
-                        ? <tr><td>Loading...</td></tr> 
+                        ? <LoadingSkeleton />
                         : countries.map((country) => (
                             <tr key={country.name.common}>
                                 <td className="country-flag"><img src={country.flags.png} alt={country.name.common} /></td>
                                 <td>{country.name.common}</td>
                                 <td>{country.population}</td>
                                 <td>{country.area}</td>
+                                <td>{country.region}</td>
                             </tr>
                         ))
                     }
