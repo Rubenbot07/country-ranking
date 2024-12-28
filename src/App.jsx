@@ -1,7 +1,8 @@
+import { CountryProvider } from './context/CountryContext.jsx'
 import { Home } from './Pages/HomePage.jsx'
 import { CountryPage } from './Pages/CountryPage.jsx'
-import './css/App.css'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import './css/App.css'
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -15,9 +16,11 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      <CountryProvider>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </CountryProvider>
     </>
   )
 }

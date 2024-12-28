@@ -42,7 +42,7 @@
 .home-page main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   padding-block-end: 20px;
 }
 @media (min-width: 768px) {
@@ -207,6 +207,17 @@
   padding: 20px 5px;
   color: #D2D5DA;
   text-align: left;
+}
+.country-container tbody .country-flag {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.country-container tbody .country-flag img {
+  border-radius: 14px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 body {

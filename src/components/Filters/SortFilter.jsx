@@ -1,10 +1,17 @@
+import { useContext } from "react";
+import CountryContext  from "../../context/CountryContext";
 export const SortFilter = () => {
+    const { setSortFilter } = useContext(CountryContext);
+    const changeSort = (event) => {
+        setSortFilter(event.target.value);
+    }
+
     return (
         <div className="sort-filter">
             <p className="sort-title">Sort by</p>
-            <select>
-                <option value="Population">Population</option>
-                <option value="Alphabetical">Alphabetical</option>
+            <select onChange={(event) => changeSort(event)}>
+                <option value="population">Population</option>
+                <option value="alphabetical">Alphabetical</option>
                 <option value="area">Area (km&#178;)</option>
             </select>
         </div>

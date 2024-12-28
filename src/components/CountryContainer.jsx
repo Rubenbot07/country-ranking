@@ -1,4 +1,9 @@
-export const CountryContainer = () => {
+import  CountryContext  from "../context/CountryContext"
+import { useContext } from "react"
+
+export const CountryContainer = ( ) => {
+    const { countries, loading } = useContext(CountryContext)
+
     return (
         <div className="table-container">
             <table className="country-container">
@@ -11,30 +16,19 @@ export const CountryContainer = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>🏳‍🌈</td>
-                        <td>Argentina</td>
-                        <td>50,000,000</td>
-                        <td>9,706,961</td>
-                    </tr>
-                    <tr>
-                        <td>🏳‍🌈</td>
-                        <td>Argentina</td>
-                        <td>50,000,000</td>
-                        <td>9,706,961</td>
-                    </tr>
-                    <tr>
-                        <td>🏳‍🌈</td>
-                        <td>Argentina</td>
-                        <td>50,000,000</td>
-                        <td>9,706,961</td>
-                    </tr>
-                    <tr>
-                        <td>🏳‍🌈</td>
-                        <td>Argentina</td>
-                        <td>50,000,000</td>
-                        <td>9,706,961</td>
-                    </tr>
+                    {
+                        loading
+                        ? <tr><td>Loading...</td></tr> 
+                        : countries.map((country) => (
+                            <tr key={country.name.common}>
+                                <td className="country-flag"><img src={country.flags.png} alt={country.name.common} /></td>
+                                <td>{country.name.common}</td>
+                                <td>{country.population}</td>
+                                <td>{country.area}</td>
+                            </tr>
+                        ))
+                    }
+                    
                 </tbody>
             </table>
         </div>
