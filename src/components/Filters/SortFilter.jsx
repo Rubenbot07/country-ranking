@@ -9,7 +9,7 @@ export const SortFilter = () => {
     return (
         <div className="sort-filter">
             <p className="sort-title">Sort by</p>
-            <select onChange={(event) => changeSort(event)}>
+            <select onChange={changeSort}>
                 <option value="population">Population</option>
                 <option value="alphabetical">Alphabetical</option>
                 <option value="area">Area (km&#178;)</option>

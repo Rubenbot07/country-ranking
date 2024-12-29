@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { LoadingSkeleton } from "./LoadingSkeleton"
 
 export const CountryContainer = ( ) => {
-    const { countries, loading } = useContext(CountryContext)
+    const { filteredCountries, loading } = useContext(CountryContext)
 
     return (
         <div className="table-container">
@@ -21,7 +21,7 @@ export const CountryContainer = ( ) => {
                     {
                         loading
                         ? <LoadingSkeleton />
-                        : countries.map((country) => (
+                        : filteredCountries.map((country) => (
                             <tr key={country.name.common}>
                                 <td className="country-flag"><img src={country.flags.png} alt={country.name.common} /></td>
                                 <td>{country.name.common}</td>
