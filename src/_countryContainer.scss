@@ -1,6 +1,7 @@
 .table-container {
     width: 100%;
     padding-inline: 20px;
+    overflow-x: scroll;
 }
 
 .country-container {
@@ -27,6 +28,7 @@
         .country-flag {
             width: 100px;
             height: 100px;
+            min-width: 100px;
             margin-right: 10px;
         }
         .country-flag img {
