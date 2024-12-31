@@ -1,6 +1,6 @@
 import  { createContext } from 'react';
 import useFetchCountries from '../customHooks/useFetchContries';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
