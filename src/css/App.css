@@ -219,6 +219,7 @@
   color: #D2D5DA;
   text-align: left;
   margin-right: 10px;
+  cursor: pointer;
 }
 .country-container tbody .country-flag {
   width: 100px;
@@ -380,6 +381,7 @@ main .neighbouring-countries-container .flags-container .img-container {
   min-width: 100px;
   padding: 5px 0px;
   overflow: hidden;
+  cursor: pointer;
 }
 main .neighbouring-countries-container .flags-container .img-container img {
   border-radius: 14px;
