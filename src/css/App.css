@@ -152,12 +152,16 @@
   display: flex;
   justify-content: space-evenly;
   padding: 8px;
-  background-color: #282B30;
   border-radius: 8px;
-  color: #D2D5DA;
+  color: #6C727F;
   font-size: 0.9rem;
   font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: bold;
   cursor: pointer;
+}
+.region-filter .regions-container .regions-item-active {
+  background-color: #282B30;
+  color: #D2D5DA;
 }
 
 .onu-member-filter .onu-member-title {
