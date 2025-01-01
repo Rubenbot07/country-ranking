@@ -13,6 +13,7 @@ export const CountryProvider = ({ children }) => {
   const [searchInput, setSearchInput] = useState('')
   const [isHomePage, setIsHomePage] = useState(true);
 
+  
   useEffect(() => {
     let updatedCountries = [...countries];
 
@@ -46,6 +47,7 @@ export const CountryProvider = ({ children }) => {
   useEffect(() => {
     if (isHomePage) {
       setFilteredCountries(countries.sort((a, b) => b.population - a.population));
+      setSearchInput('')
     }
   }, [isHomePage, countries]);
 
