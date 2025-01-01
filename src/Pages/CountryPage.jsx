@@ -1,13 +1,17 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import CountryContext from "../context/CountryContext"
 import { useParams, useNavigate } from "react-router-dom"
 import { Hero } from "../Hero"
 
 export const CountryPage = () => {
-    const { countries, loading, error } = useContext(CountryContext)
+    const { countries, loading, error, setIsHomePage } = useContext(CountryContext)
     const { id } = useParams()
     const currentCountry = countries.find(country => country.name.common === id);
     const borderCountries = countries.filter(country => currentCountry.borders.includes(country.cca3))
+    useEffect(() => {
+        setIsHomePage(false);
+        return () => setIsHomePage(true);
+    }, [setIsHomePage]);
     const navigate = useNavigate()
     const handleClick = (name) => {
         navigate(`/${name}`)

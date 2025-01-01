@@ -1,6 +1,6 @@
-import  { createContext } from 'react';
+import  { createContext, useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import useFetchCountries from '../customHooks/useFetchContries';
-import { useState, useEffect } from 'react';
 const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
@@ -11,10 +11,10 @@ export const CountryProvider = ({ children }) => {
   const [independent, setIndependent] = useState(false);
   const [regionFilter, setRegionFilter] = useState(['Americas', 'Antarctic', 'Africa', 'Asia', 'Europe', 'Oceania']);
   const [searchInput, setSearchInput] = useState('')
-
+  const [isHomePage, setIsHomePage] = useState(true);
 
   useEffect(() => {
-    let updatedCountries = [...countries.sort((a, b) => b.population - a.population)];
+    let updatedCountries = [...countries];
 
     if (sortFilter === 'population') {
       updatedCountries.sort((a, b) => b.population - a.population);
@@ -23,40 +23,53 @@ export const CountryProvider = ({ children }) => {
     } else if (sortFilter === 'alphabetical') {
       updatedCountries.sort((a, b) => a.name.common.localeCompare(b.name.common));
     }
-    if(ONUMember) {
+
+    if (ONUMember) {
       updatedCountries = updatedCountries.filter((country) => country.unMember);
     }
-    if(independent) {
-      updatedCountries = updatedCountries.filter((country) => !country.unMember);
+
+    if (independent) {
+      updatedCountries = updatedCountries.filter((country) => country.independent);
     }
-    if(regionFilter.length > 0) { 
+
+    if (regionFilter.length > 0) {
       updatedCountries = updatedCountries.filter((country) => regionFilter.includes(country.region));
     }
-    if(searchInput) {
+
+    if (searchInput !== '') {
       updatedCountries = updatedCountries.filter((country) => country.name.common.toLowerCase().startsWith(searchInput.toLowerCase()));
     }
+
     setFilteredCountries(updatedCountries);
   }, [sortFilter, countries, ONUMember, independent, regionFilter, searchInput]);
+
+  useEffect(() => {
+    if (isHomePage) {
+      setFilteredCountries(countries.sort((a, b) => b.population - a.population));
+    }
+  }, [isHomePage, countries]);
 
 
 
 
   return (
     <CountryContext.Provider value={
-      {filteredCountries,
-      countries,
-      loading,
-      error,
-      sortFilter,
-      setSortFilter,
-      setONUMember,
-      setIndependent,
-      ONUMember,
-      independent,
-      regionFilter,
-      setRegionFilter,
-      searchInput,
-      setSearchInput
+      {
+        filteredCountries,
+        countries,
+        loading,
+        error,
+        sortFilter,
+        setSortFilter,
+        setONUMember,
+        setIndependent,
+        ONUMember,
+        independent,
+        regionFilter,
+        setRegionFilter,
+        searchInput,
+        setSearchInput,
+        setIsHomePage
       }
      }>
       {children}
