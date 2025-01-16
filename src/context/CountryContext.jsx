@@ -1,5 +1,4 @@
 import  { createContext, useState, useEffect} from 'react';
-import { useLocation } from 'react-router-dom';
 import useFetchCountries from '../customHooks/useFetchContries';
 const CountryContext = createContext();
 
@@ -30,7 +29,8 @@ export const CountryProvider = ({ children }) => {
     }
 
     if (independent) {
-      updatedCountries = updatedCountries.filter((country) => country.independent);
+      console.log('independent')
+      updatedCountries = updatedCountries.filter((country) => !country.unMember);
     }
 
     if (regionFilter.length > 0) {
@@ -42,6 +42,7 @@ export const CountryProvider = ({ children }) => {
     }
 
     setFilteredCountries(updatedCountries);
+    console.log(updatedCountries)
   }, [sortFilter, countries, ONUMember, independent, regionFilter, searchInput]);
 
   useEffect(() => {
