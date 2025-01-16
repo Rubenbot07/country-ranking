@@ -29,7 +29,6 @@ export const CountryProvider = ({ children }) => {
     }
 
     if (independent) {
-      console.log('independent')
       updatedCountries = updatedCountries.filter((country) => !country.unMember);
     }
 
@@ -42,7 +41,6 @@ export const CountryProvider = ({ children }) => {
     }
 
     setFilteredCountries(updatedCountries);
-    console.log(updatedCountries)
   }, [sortFilter, countries, ONUMember, independent, regionFilter, searchInput]);
 
   useEffect(() => {
