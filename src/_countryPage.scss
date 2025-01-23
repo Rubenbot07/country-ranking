@@ -42,8 +42,13 @@ main {
         align-items: center;
         position: relative;
         top: -50px;
-        img {
-            border-radius: 14px;
+        .main-flag-container {
+            width: 320px;
+            height: 213px;
+            img {
+                width: 100%;
+                border-radius: 14px;
+            }
         }
         .country-names {
             text-align: center;

@@ -28,7 +28,7 @@ export const CountryContainer = ( ) => {
                         ? <LoadingSkeleton />
                         : filteredCountries.map((country) => (
                             <tr key={country.name.common} onClick={() => handleCountryClick(country.name.common)}>
-                                    <td className="country-flag"><img src={country.flags.png} alt={country.name.common} /></td>
+                                    <td className="country-flag"><img src={country.flags.svg} alt={country.flags.alt} /></td>
                                     <td>{country.name.common}</td>
                                     <td>{country.population}</td>
                                     <td>{country.area}</td>

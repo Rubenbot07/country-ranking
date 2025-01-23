@@ -37,7 +37,7 @@ export const CountryPage = () => {
                                 <main>     
                                     <div className="country-page-header">
                                         <div className="main-flag-container">
-                                            <img src={currentCountry.flags.png} alt={currentCountry.name.common} />
+                                            <img src={currentCountry.flags.svg} alt={currentCountry.flags.alt} />
                                         </div>                   
                                         <div className="country-names">
                                             <h1>{currentCountry.name.common}</h1>
