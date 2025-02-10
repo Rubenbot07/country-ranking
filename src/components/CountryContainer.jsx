@@ -37,7 +37,7 @@ export const CountryContainer = ( ) => {
                                 role="row" 
                                 aria-label={`Country ${country.name.common}`}
                             >
-                                    <td className="country-flag"><img src={country.flags.svg} alt={country.flags.alt} loading="lazy"/></td>
+                                    <td className="country-flag"><img src={country.flags.svg} alt={country.flags.alt || `Flag of ${country.name.common}`} loading="lazy"/></td>
                                     <td>{country.name.common}</td>
                                     <td>{country.population}</td>
                                     <td>{country.area}</td>
