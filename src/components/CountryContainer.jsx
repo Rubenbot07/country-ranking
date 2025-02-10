@@ -7,8 +7,8 @@ export const CountryContainer = ( ) => {
     const { filteredCountries, loading } = useContext(CountryContext)
     const navigate = useNavigate()
     const handleCountryClick = (country, e) => {
-        navigate(`/${country}`)
-        if(e.key === 'Enter') {
+        if(!e || e.key === 'Enter') {
+            console.log('enter')
             navigate(`/${country}`)
         }
     }
