@@ -74,7 +74,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 20px 20px;
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 0.9rem;
   gap: 20px;
 }
@@ -117,10 +117,9 @@
   width: 100%;
 }
 .sort-filter .sort-title {
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 .sort-filter select {
   width: 100%;
@@ -133,6 +132,7 @@
   color: #D2D5DA;
   font-size: 0.9rem;
   font-family: "Be Vietnam Pro", sans-serif;
+  margin-top: 10px;
 }
 .sort-filter select option {
   background-color: #1B1D1F;
@@ -142,7 +142,7 @@
 }
 
 .region-filter .region-title {
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -170,7 +170,7 @@
 }
 
 .onu-member-filter .onu-member-title {
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -215,7 +215,7 @@
   width: 100px;
   text-align: left;
   padding: 20px 5px;
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -364,7 +364,7 @@ main .aditional-info-container p:first-child {
   border-top: 0.2px solid rgba(82, 82, 82, 0.387);
 }
 main .aditional-info-container p span:nth-child(1) {
-  color: #6C727F;
+  color: #D2D5DA;
 }
 main .neighbouring-countries-container {
   display: flex;
@@ -374,7 +374,7 @@ main .neighbouring-countries-container {
   padding: 10px;
 }
 main .neighbouring-countries-container h2 {
-  color: #6C727F;
+  color: #D2D5DA;
   font-size: 1rem;
 }
 main .neighbouring-countries-container .flags-container {

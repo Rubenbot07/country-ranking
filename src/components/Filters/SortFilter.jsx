@@ -8,8 +8,8 @@ export const SortFilter = () => {
 
     return (
         <div className="sort-filter">
-            <p className="sort-title">Sort by</p>
-            <select onChange={changeSort}>
+            <label htmlFor="sort-select" className="sort-title">Sort by</label>
+            <select id="sort-select" onChange={changeSort}>
                 <option value="population">Population</option>
                 <option value="alphabetical">Alphabetical</option>
                 <option value="area">Area (km&#178;)</option>

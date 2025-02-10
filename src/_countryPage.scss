@@ -93,7 +93,7 @@ main {
             border-top: 0.2px solid rgba(82, 82, 82, 0.387);
         }
         p span:nth-child(1) {
-            color: $tertiary-color;
+            color: $text-color;
         }
     }
 
@@ -104,7 +104,7 @@ main {
         width: 100%;
         padding: 10px;
         h2 {
-            color: $tertiary-color;
+            color: $text-color;
             font-size: 1rem;
         }
         .flags-container {
