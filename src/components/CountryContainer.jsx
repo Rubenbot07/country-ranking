@@ -6,8 +6,11 @@ import { LoadingSkeleton } from "./LoadingSkeleton"
 export const CountryContainer = ( ) => {
     const { filteredCountries, loading } = useContext(CountryContext)
     const navigate = useNavigate()
-    const handleCountryClick = (country) => {
+    const handleCountryClick = (country, e) => {
         navigate(`/${country}`)
+        if(e.key === 'Enter') {
+            navigate(`/${country}`)
+        }
     }
 
     return (
@@ -27,7 +30,7 @@ export const CountryContainer = ( ) => {
                         loading
                         ? <LoadingSkeleton />
                         : filteredCountries.map((country) => (
-                            <tr key={country.name.common} onClick={() => handleCountryClick(country.name.common)}>
+                            <tr key={country.name.common} onClick={() => handleCountryClick(country.name.common)} onKeyDown={(e) => handleCountryClick(country.name.common, e)} tabIndex={0} role="button">
                                     <td className="country-flag"><img src={country.flags.svg} alt={country.flags.alt} loading="lazy"/></td>
                                     <td>{country.name.common}</td>
                                     <td>{country.population}</td>
