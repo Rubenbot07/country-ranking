@@ -30,7 +30,13 @@ export const CountryContainer = ( ) => {
                         loading
                         ? <LoadingSkeleton />
                         : filteredCountries.map((country) => (
-                            <tr key={country.name.common} onClick={() => handleCountryClick(country.name.common)} onKeyDown={(e) => handleCountryClick(country.name.common, e)} tabIndex={0} role="button">
+                            <tr key={country.name.common} onClick={() => 
+                                handleCountryClick(country.name.common)} 
+                                onKeyDown={(e) => handleCountryClick(country.name.common, e)} 
+                                tabIndex={0} 
+                                role="row" 
+                                aria-label={`Country ${country.name.common}`}
+                            >
                                     <td className="country-flag"><img src={country.flags.svg} alt={country.flags.alt} loading="lazy"/></td>
                                     <td>{country.name.common}</td>
                                     <td>{country.population}</td>

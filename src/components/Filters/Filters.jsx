@@ -3,10 +3,10 @@ import { RegionFilter } from "./RegionFilter"
 import { OnuMember } from "./OnuMember"
 export const Filters = () => {
     return (
-        <div className="filters">
+        <aside className="filters">
             <SortFilter />
             <RegionFilter />
             <OnuMember />
-        </div>
+        </aside>
     )
 }
