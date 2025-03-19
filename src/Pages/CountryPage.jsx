@@ -11,7 +11,7 @@ export const CountryPage = () => {
     useEffect(() => {
         setIsHomePage(false);
         return () => setIsHomePage(true);
-    }, [setIsHomePage]);
+    }, []); // This effect runs once when the component mounts and unmounts, is used to set the isHomePage state and reset the search input and avoid bugs
     const navigate = useNavigate()
     const handleClick = (name) => {
         navigate(`/${name}`)

@@ -12,7 +12,6 @@ export const CountryProvider = ({ children }) => {
   const [searchInput, setSearchInput] = useState('')
   const [isHomePage, setIsHomePage] = useState(true);
 
-  console.log(countries)
   useEffect(() => {
     let updatedCountries = [...countries];
 
@@ -70,7 +69,7 @@ export const CountryProvider = ({ children }) => {
         setRegionFilter,
         searchInput,
         setSearchInput,
-        setIsHomePage
+        setIsHomePage, 
       }
      }>
       {children}

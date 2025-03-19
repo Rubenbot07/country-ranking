@@ -8,7 +8,6 @@ export const CountryContainer = ( ) => {
     const navigate = useNavigate()
     const handleCountryClick = (country, e) => {
         if(!e || e.key === 'Enter') {
-            console.log('enter')
             navigate(`/${country}`)
         }
     }
